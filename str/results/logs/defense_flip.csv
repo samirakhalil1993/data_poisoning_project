@@ -1,0 +1,2 @@
+attack_type,attack_rate,accuracy,f1,train_size,confusion_matrix
+label_flip,0.1,0.816,0.8145161290322581,500,"[[103, 26], [20, 101]]"

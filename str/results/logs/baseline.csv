@@ -1,0 +1,2 @@
+attack_type,attack_rate,accuracy,f1,train_size,confusion_matrix
+baseline,0.0,0.84,0.84,500,"[[105, 24], [16, 105]]"
