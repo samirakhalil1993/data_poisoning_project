@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model outputs and checkpoints (too large for git)
+str/*_output/
+str/baseline_output/
+str/label_flip_*_output/
+str/backdoor_*_output/
+str/defense_*_output/
+**/checkpoint-*/
+**/*.safetensors
+**/*.bin
+**/optimizer.pt
+**/scheduler.pt
+**/rng_state.pth
+
+# Large model files
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.pickle
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Keep results
+!str/results/logs/*.csv
