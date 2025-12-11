@@ -69,10 +69,18 @@ def print_summary(results):
     
     if 'defense' in results:
         print("\n📊 Defense (IsolationForest):")
-        defense_df = results['defense'][['attack_rate', 'accuracy', 'removed_count']].sort_values('attack_rate')
+        # Check which columns exist
+        cols = ['attack_rate', 'accuracy']
+        if 'removed_count' in results['defense'].columns:
+            cols.append('removed_count')
+        
+        defense_df = results['defense'][cols].sort_values('attack_rate')
         for _, row in defense_df.iterrows():
-            removed = row['removed_count'] if pd.notna(row['removed_count']) else 0
-            print(f"  {row['attack_rate']*100:5.1f}% poison → Accuracy: {row['accuracy']:.4f} (removed {removed} examples)")
+            removed = row.get('removed_count', 0) if 'removed_count' in cols else 0
+            if removed:
+                print(f"  {row['attack_rate']*100:5.1f}% poison → Accuracy: {row['accuracy']:.4f} (removed {int(removed)} examples)")
+            else:
+                print(f"  {row['attack_rate']*100:5.1f}% poison → Accuracy: {row['accuracy']:.4f}")
 
 def plot_results(results):
     """Skapa visualiseringar"""
