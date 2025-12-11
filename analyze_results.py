@@ -31,7 +31,7 @@ def load_results():
     
     if os.path.exists(DEFENSE_CSV):
         results['defense'] = pd.read_csv(DEFENSE_CSV)
-        print("✔ Defense loaded")
+        print("✔ Defense loaded.")
     
     return results
 
